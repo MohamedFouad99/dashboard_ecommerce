@@ -10,6 +10,12 @@ class OrdersScreen extends StatelessWidget {
   const OrdersScreen({super.key});
 
   @override
+
+  /// Returns a Scaffold with a grey background, an app bar with the title
+  /// "Order Dashboard", and a body with two ElevatedButtons centered in
+  /// the screen. The first button navigates to the [MetricsScreen] page when
+  /// pressed, and the second navigates to the [GraphScreen] page. The buttons
+  /// are separated by 16 logical pixels.
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.grey,

@@ -1,8 +1,3 @@
-// Date: 29/9/2024
-// By: Nada Mohammed
-// Last update: 29/9/2024
-// Objectives: This file is responsible for providing a widget that displays bar chart data in the dashboard.
-
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
@@ -30,6 +25,15 @@ class DashboardColumnBarChart extends StatelessWidget {
   });
 
   @override
+
+  ///
+  /// Builds the widget tree for the DashboardColumnBarChart.
+  ///
+  /// If the data is empty, it returns a SizedBox. Otherwise, it returns a
+  /// Container with a Column containing a Row with a CircleAvatar and a Text
+  /// widget, a Divider, and a SfCartesianChart widget with a ColumnSeries
+  /// widget.
+  ///
   Widget build(BuildContext context) {
     return data.isEmpty
         ? const SizedBox()
@@ -69,7 +73,9 @@ class DashboardColumnBarChart extends StatelessWidget {
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: SizedBox(
-                        width: data.length * Get.width / 11,
+                        width: context.isTablet
+                            ? data.length * Get.width / 11
+                            : data.length * Get.width / 6,
                         height: 500.h,
                         child: SfCartesianChart(
                           plotAreaBorderWidth: 0,
@@ -96,7 +102,6 @@ class DashboardColumnBarChart extends StatelessWidget {
                             axisLine: const AxisLine(color: Colors.transparent),
                             interval: 1,
                             majorGridLines: MajorGridLines(
-                              //   width: 0.7.w,
                               color: AppColors.secondaryBlack,
                               dashArray: const <double>[5, 5],
                             ),
@@ -105,7 +110,6 @@ class DashboardColumnBarChart extends StatelessWidget {
                             ColumnSeries<ChartData, String>(
                               animationDuration: 1000,
                               dataSource: data,
-                              //use dataa to test long list
                               xValueMapper: (ChartData data, _) =>
                                   data.xAxisLabel,
                               yValueMapper: (ChartData data, _) =>

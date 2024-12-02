@@ -30,12 +30,39 @@ class OrderController extends GetxController {
   ];
   List<int> values = [0, 0, 0];
   List<ChartData> numberOfOrdersInMonth = [];
+  List<String> monthOrder = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ];
   @override
+
+  /// Called when the controller is initialized.
+  ///
+  /// This method overrides the `onInit` method of `GetxController`.
+  /// It performs initial setup tasks, such as fetching orders
+  /// to populate the orders list with data from the repository.
   void onInit() {
     super.onInit();
     fetchOrders();
   }
 
+  /// Fetches orders from the repository.
+  ///
+  /// This method initiates the fetching process by calling the `fetchOrdersUseCase`.
+  /// It updates the loading state during the process and handles any potential
+  /// failures by setting an error message. Upon successful fetching, it updates
+  /// the `orders` observable with the fetched data and recalculates metrics and
+  /// orders by month. It ensures the loading state is reset at the end of the process.
   Future<void> fetchOrders() async {
     isLoading.value = true;
     errorMessage.value = '';
@@ -51,6 +78,12 @@ class OrderController extends GetxController {
     isLoading.value = false;
   }
 
+  /// Calculates metrics from the orders list.
+  ///
+  /// This method calculates the total number of orders, the average price of all orders,
+  /// and the number of orders with the status 'RETURNED'. It updates the respective
+  /// observables with the calculated values. It also updates the values list with the
+  /// calculated values, for use in the metrics chart.
   void calculateMetrics() {
     totalOrders.value = orders.length;
     averagePrice.value = orders
@@ -66,20 +99,12 @@ class OrderController extends GetxController {
     ];
   }
 
-  List<String> monthOrder = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec"
-  ];
+  /// It calculates the number of orders in each month from the orders list.
+  ///
+  /// This method groups the orders by month (using the first three letters of the month name)
+  /// and counts the number of orders in each month. It then sorts the grouped entries by month
+  /// order and updates the `numberOfOrdersInMonth` observable with the sorted entries.
+  /// It also updates the `ordersByMonth` observable with the sorted entries.
   void calculateOrdersByMonth() {
     numberOfOrdersInMonth = [];
     Map<String, int> groupedOrders = {};

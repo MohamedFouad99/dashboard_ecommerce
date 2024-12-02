@@ -1,6 +1,3 @@
-// Date: 29/9/2024
-// By: Youssef Ashraf, Nada Mohammed, Mohammed Ashraf
-// Last update: 29/9/2024
 // Objectives: This file is responsible for providing the app colors that are used in the app.
 
 import 'package:dashboard_ecommerce/core/theme/app_theme.dart';
