@@ -1,3 +1,5 @@
+Screen Recording: https://www.loom.com/share/f78645669ccb4f808976acadeb959d88
+
 #Project Architecture
 This app is built using the Clean Architecture pattern, ensuring a clear separation of concerns:
 
