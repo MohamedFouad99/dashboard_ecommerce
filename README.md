@@ -1,4 +1,4 @@
-**Project Architecture
+#Project Architecture
 This app is built using the Clean Architecture pattern, ensuring a clear separation of concerns:
 
 lib/                             
@@ -25,8 +25,21 @@ lib/
 
 
 
+Core: Contains reusable app-wide configurations, themes, and utilities. 
 
-About the Project
+Data: Manages data sources and transformations.
+
+Domain: Contains core business logic, entities, and use cases.
+
+Presentation: Manages the UI, controllers, and widgets.
+
+
+
+
+
+
+#About the Project
+
 The Order Analytics App is a Flutter-based application designed to help businesses analyze and visualize their order data. The app provides insights such as:
 
 Total number of orders.
@@ -37,14 +50,76 @@ This app utilizes Clean Architecture principles, ensuring scalability, testabili
 
 
 
-**Features
+
+
+
+
+
+
+
+
+#Features
+
 Dashboard Metrics:
  Total orders, average order price, and count of returned orders.
+
+ 
 Graphical Insights:
  Visualize order trends over time using interactive charts.
+
+ 
 Real-time Performance:
  Seamless performance with GetX's reactive state management.
 
 
 
 
+
+
+
+
+
+
+ 
+
+
+
+#Tech Stack
+
+
+
+Frontend:
+
+Flutter: For creating the UI and handling app logic.
+
+GetX: State management and navigation.
+
+Charts Flutter: For visualizing data.
+
+Intl: Formatting dates and numbers.
+
+
+Backend:
+
+Local JSON File: Mock data source for analytics.
+
+
+
+#Contributing
+
+Contributions are welcome! If you'd like to improve the app, follow these steps:
+
+
+Fork the repository.
+
+
+Create a feature branch: git checkout -b feature/YourFeature.
+
+
+Commit your changes: git commit -m 'Add YourFeature'.
+
+
+Push to the branch: git push origin feature/YourFeature.
+
+
+Open a Pull Request.
