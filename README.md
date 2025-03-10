@@ -1,5 +1,5 @@
 
-#Project Architecture
+# Project Architecture
 This app is built using the Clean Architecture pattern, ensuring a clear separation of concerns:
 
 lib/                             
@@ -39,7 +39,7 @@ Presentation: Manages the UI, controllers, and widgets.
 
 
 
-#About the Project
+# About the Project
 
 The Order Analytics App is a Flutter-based application designed to help businesses analyze and visualize their order data. The app provides insights such as:
 
@@ -59,7 +59,7 @@ This app utilizes Clean Architecture principles, ensuring scalability, testabili
 
 
 
-#Features
+# Features
 
 Dashboard Metrics:
  Total orders, average order price, and count of returned orders.
@@ -85,7 +85,7 @@ Real-time Performance:
 
 
 
-#Tech Stack
+# Tech Stack
 
 
 
@@ -106,7 +106,7 @@ Local JSON File: Mock data source for analytics.
 
 
 
-#Contributing
+# Contributing
 
 Contributions are welcome! If you'd like to improve the app, follow these steps:
 
